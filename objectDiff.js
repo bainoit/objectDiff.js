@@ -102,20 +102,20 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
 		var key = keys[i];
 		if (b.hasOwnProperty(key)) {
 			if (a[key] === b[key]) {
-				diff[key] = {
-					changed: 'equal',
-					value: a[key]
-				}
+				// diff[key] = {
+				// 	changed: 'equal',
+				// 	value: a[key]
+				// }
 			} else {
 				var typeA = typeof a[key];
 				var typeB = typeof b[key];
 				if (a[key] && b[key] && (typeA == 'object' || typeA == 'function') && (typeB == 'object' || typeB == 'function')) {
 					var valueDiff = diffOwnProperties(a[key], b[key]);
 					if (valueDiff.changed == 'equal') {
-						diff[key] = {
-							changed: 'equal',
-							value: a[key]
-						}
+						// diff[key] = {
+						// 	changed: 'equal',
+						// 	value: a[key]
+						// }
 					} else {
 						equal = false;
 						diff[key] = valueDiff;
